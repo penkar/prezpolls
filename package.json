@@ -1,0 +1,14 @@
+{
+  "name": "prezpolls",
+  "version": "1.0.0",
+  "description": "\"Overlapping gallup polls for last few presidents.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"JSP\"",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.1"
+  }
+}
