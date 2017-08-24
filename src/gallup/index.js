@@ -1,3 +1,4 @@
-export * from 'obamaApproval';
-export * from 'obamaParty';
-export * from 'bushApproval';
+export * from './obamaApproval';
+export * from './obamaParty';
+export * from './bushApproval';
+export * from './bushParty';
