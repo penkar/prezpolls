@@ -1,2 +1,3 @@
 export * from 'obamaApproval';
 export * from 'obamaParty';
+export * from 'bushApproval';
