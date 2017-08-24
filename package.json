@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack",
+    "dev": "webpack & python -m SimpleHTTPServer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "\"JSP\"",
