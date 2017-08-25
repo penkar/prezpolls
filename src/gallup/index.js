@@ -4,3 +4,5 @@ export * from './bushApp';
 export * from './bushParty';
 export * from './clintonApp';
 export * from './clintonParty';
+export * from './trumpApp';
+export * from './trumpParty';
