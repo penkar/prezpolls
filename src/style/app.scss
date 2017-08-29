@@ -4,7 +4,7 @@ html, body {
 
 #app {
   width: 100vw;
-  height: 300vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -29,4 +29,11 @@ html, body {
   &:after {
     content: "Historical Presidential Gallup Polls"
   }
+}
+
+#main {
+  padding-top: 4rem;
+  height: calc(100%  - 4rem);
+  width: 100vw;
+  background-color: #C5CAE9;
 }
