@@ -1,5 +1,11 @@
 import React from 'react'
+import * as gallup from '../gallup'
 
-const App = () => (<div>Body</div>);
+const App = () => {
+  return (
+    <div id='app'>
+    </div>
+  )
+};
 
 export {App}

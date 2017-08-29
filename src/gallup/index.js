@@ -1,4 +1,4 @@
-export * from './obamApp';
+export * from './obamaApp';
 export * from './obamaParty';
 export * from './bushApp';
 export * from './bushParty';
