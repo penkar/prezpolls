@@ -418,9 +418,9 @@ const obamaApp = [
   {start:new Date(`2009 Jan 26`), app:66, dis:18, neu:17},
   {start:new Date(`2009 Jan 21`), app:67, dis:13, neu:22},
 ]
-const obamAppData = {
+const obamaAppData = {
   president: `Barak H. Obama`,
   party: `Democrat`,
 }
 
-export {obamaApp, obamAppData}
+export {obamaApp, obamaAppData}
