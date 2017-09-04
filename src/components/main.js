@@ -4,7 +4,7 @@ import {HC} from './hc'
 const Main = ({obamaApp, obamaParty, bushApp, bushParty, clintonApp, clintonParty, trumpApp, trumpParty}) => {
   return (
     <div id='main'>
-      <HC />
+      <HC data={obamaApp} />
     </div>
   )
 }
