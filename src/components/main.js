@@ -1,9 +1,9 @@
 import React from 'react'
 import {HC} from './hc'
 
-const Main = (data, info) => {
+const ApprovalDisapproval = (data, info) => {
   let approval = [], disapproval = [], neutral = [];
-  let {president} = info
+  let {president} = info;
 
   for(let i = data.length -1; i > -1; i--) {
     let date = data[i]
@@ -23,7 +23,7 @@ const Main = (data, info) => {
     name: `${president} Neutral Rating`,
     type:'area',
     data: neutral,
-  }]
+  }];
 
   return (
     <div id='main'>
@@ -32,4 +32,4 @@ const Main = (data, info) => {
   )
 }
 
-export {Main}
+export {ApprovalDisapproval}

@@ -1,10 +1,22 @@
 import React from 'react';
 import * as gallup from '../gallup';
-import {Main} from '../components'
+import {ApprovalDisapproval} from '../components'
 
 require('../style/app.scss');
 
-const cycleData = ['obamaApp','bushApp','clintonApp','trumpApp'];
+const cycleData = [{
+  president:'obamaApp',
+  info:'obamaAppData',
+},{
+  president:'bushApp',
+  info:'bushAppData',
+},{
+  president:'clintonApp',
+  info:'clintonAppData',
+},{
+  president:'trumpApp',
+  info:'trumpAppData',
+}];
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +30,7 @@ class App extends React.Component {
 
   render() {
     let {index} = this.state;
-    let data = gallup[cycleData[index]], info = gallup[`${cycleData[index]}Data`];
+    let data = gallup[cycleData[index].president], info = gallup[cycleData[index].info];
     return (
       <div id='app'>
         <div id='header'>
@@ -27,7 +39,7 @@ class App extends React.Component {
           <div onClick={this._next} className='button'>Next</div>
         </div>
 
-        { Main( data, info ) }
+        { ApprovalDisapproval( data, info ) }
 
       </div>
     )
