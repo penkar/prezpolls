@@ -218,4 +218,9 @@ const clintonApp = [
   {start: new Date(`93 Jan 24`), app:58, dis:20, neu:22},
 ]
 
-export {clintonApp}
+const clintonAppData = {
+  president: `Bill Clinton`,
+  party: `Democrat`,
+}
+
+export {clintonApp, clintonAppData}

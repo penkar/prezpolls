@@ -283,4 +283,10 @@ const bushApp = [
   {start: new Date(`2001 Feb 9`), app:57, dis:25, neu:	18},
   {start: new Date(`2001 Feb 1`), app:57, dis:25, neu:	18},
 ]
-export {bushApp}
+
+const bushAppData = {
+  president: `Gerorge W. Bush`,
+  party: `Republican`,
+}
+
+export {bushApp, bushAppData}

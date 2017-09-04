@@ -31,4 +31,9 @@ const trumpApp = [
   {start: new Date(`2017 Jan 20`), app:45, dis:47, neu:8},
 ]
 
-export {trumpApp}
+const trumpAppData = {
+  president: `Donald J. Trump`,
+  party: `republican`,
+}
+
+export {trumpApp, trumpAppData}
