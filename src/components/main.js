@@ -12,15 +12,15 @@ const ApprovalDisapproval = (data, info) => {
     neutral.push([date.start.getTime(), date.neu]);
   }
   let series = [{
-    name: `${president} Approval Rating`,
+    name: `Approval`,
     type:'area',
     data: approval
   },{
-    name: `${president} Disapproval Rating`,
+    name: `Disapproval`,
     type:'area',
     data: disapproval,
   },{
-    name: `${president} Neutral Rating`,
+    name: `Neutral`,
     type:'area',
     data: neutral,
   }];

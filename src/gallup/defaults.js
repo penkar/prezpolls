@@ -1,6 +1,6 @@
 export const approvalChartDefault = {
   chart: {
-    type:`line`,
+    type:`area`,
   },
   title: {
     text: `Presidential Approval Poll for George W. Bush`,
@@ -26,5 +26,19 @@ export const approvalChartDefault = {
     x: 0,
     y: 0,
   },
-  plotOptions: {},
+  tooltip: {
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
+    split: true
+  },
+  plotOptions: {
+    area: {
+      stacking: 'percent',
+      lineColor: '#ffffff',
+      lineWidth: 1,
+      marker: {
+        lineWidth: 1,
+        lineColor: '#ffffff'
+      }
+    }
+  },
 }
