@@ -1,4 +1,4 @@
-const obamApp = [
+const obamaApp = [
   {start:new Date(`2017 Jan 16`), app:59, dis:37, neu:4},
   {start:new Date(`2017 Jan 9`), app:57, dis:39, neu:4},
   {start:new Date(`2017 Jan 2`), app:55, dis:42, neu:3},
@@ -418,4 +418,4 @@ const obamApp = [
   {start:new Date(`2009 Jan 26`), app:66, dis:18, neu:17},
   {start:new Date(`2009 Jan 21`), app:67, dis:13, neu:22},
 ]
-export {obamApp}
+export {obamaApp}

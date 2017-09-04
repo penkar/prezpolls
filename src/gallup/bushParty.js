@@ -1,4 +1,4 @@
-const bushPary = [
+const bushParty = [
   {start: new Date(`2009 Jan 9`), rep:75, ind:28, dem:6},
   {start: new Date(`2008 Dec 12`), rep:67, ind:25, dem:7},
   {start: new Date(`2008 Dec 4`), rep:72, ind:26, dem:9},
@@ -283,4 +283,4 @@ const bushPary = [
   {start: new Date(`2001 Feb 1`), rep:88, ind:53, dem:32},
 ]
 
-export {bushPary}
+export {bushParty}
