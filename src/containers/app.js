@@ -1,16 +1,24 @@
 import React from 'react';
 import * as gallup from '../gallup';
-import {Header, Main} from '../components'
+import {Main} from '../components'
 
 require('../style/app.scss');
 
-const App = () => {
-  return (
-    <div id='app'>
-      { Header() }
-      { Main(gallup) }
-    </div>
-  )
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  render() {
+    return (
+      <div id='app'>
+        <div id='header'></div>
+        
+        { Main(gallup) }
+      </div>
+    )
+  }
+}
 
 export {App}
