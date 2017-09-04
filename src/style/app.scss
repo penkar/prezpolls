@@ -2,6 +2,13 @@ html, body {
   margin: 0px;
 }
 
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #app {
   width: 100vw;
   height: 100vh;
@@ -22,11 +29,28 @@ html, body {
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
+  .button {
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+    transition: background-color 1s linear, color 1s linear, border 1s linear;
 
-  &:after {
+    padding: 4px 16px;
+    border-radius: 4px;
+    border: solid 1px black;
+    margin: 8px;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      border: solid 1px white;
+    }
+  }
+
+  #title:after {
     content: "Historical Presidential Gallup Polls"
   }
 }
