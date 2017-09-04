@@ -1,3 +1,5 @@
+import {approvalChartDefault} from './defaults.js'
+
 const trumpApp = [
   {start: new Date(`2017 Aug 14`), app:37, dis:58, neu:6},
   {start: new Date(`2017 Aug 7`), app:36, dis:58, neu:6},
@@ -34,6 +36,7 @@ const trumpApp = [
 const trumpAppData = {
   president: `Donald J. Trump`,
   party: `republican`,
+  chart: Object.assign({}, approvalChartDefault, {title: {text: `Presidential Approval Poll for Donald Trump`,}}),
 }
 
 export {trumpApp, trumpAppData}

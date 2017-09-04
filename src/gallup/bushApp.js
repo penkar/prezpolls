@@ -1,3 +1,5 @@
+import {approvalChartDefault} from './defaults.js'
+
 const bushApp = [
   {start: new Date(`2009 Jan 9`), app:34, dis:61, neu:	5},
   {start: new Date(`2008 Dec 12`), app:29, dis:67, neu:	4},
@@ -287,6 +289,7 @@ const bushApp = [
 const bushAppData = {
   president: `Gerorge W. Bush`,
   party: `Republican`,
+  chart: Object.assign({}, approvalChartDefault, {title: {text: `Presidential Approval Poll for George W. Bush`,}}),
 }
 
 export {bushApp, bushAppData}
