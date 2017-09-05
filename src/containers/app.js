@@ -1,21 +1,41 @@
 import React from 'react';
-import * as gallup from '../gallup';
-import {ApprovalDisapproval} from '../components'
-
 require('../style/app.scss');
 
+import * as gallup from '../gallup';
+import {ApprovalDisapproval, PartyGraph} from '../components';
+
 const cycleData = [{
-  president:'obamaApp',
-  info:'obamaAppData',
+  president:'clintonApp',
+  info:'clintonAppData',
+  type:'appdis',
 },{
   president:'bushApp',
   info:'bushAppData',
+  type:'appdis',
 },{
-  president:'clintonApp',
-  info:'clintonAppData',
+  president:'obamaApp',
+  info:'obamaAppData',
+  type:'appdis',
 },{
   president:'trumpApp',
   info:'trumpAppData',
+  type:'appdis',
+},{
+  president:'clintonParty',
+  info:'clintonPartyData',
+  type:'party',
+},{
+  president:'bushParty',
+  info:'bushPartyData',
+  type:'party',
+},{
+  president:'obamaParty',
+  info:'obamaPartyData',
+  type:'party',
+},{
+  president:'trumpParty',
+  info:'trumpPartyData',
+  type:'party',
 }];
 
 class App extends React.Component {
@@ -30,7 +50,9 @@ class App extends React.Component {
 
   render() {
     let {index} = this.state;
-    let data = gallup[cycleData[index].president], info = gallup[cycleData[index].info];
+    let prez = cycleData[index];
+    let data = gallup[prez.president], info = gallup[prez.info], type = prez.type;
+
     return (
       <div id='app'>
         <div id='header'>
@@ -39,18 +61,19 @@ class App extends React.Component {
           <div onClick={this._next} className='button'>Next</div>
         </div>
 
-        { ApprovalDisapproval( data, info ) }
+        { type === 'appdis' && ApprovalDisapproval(data, info) }
+        { type === 'party' && PartyGraph(data, info) }
 
       </div>
     )
   }
 
   _next() {
-    this.setState(prev => ({index: (prev.index + 1) % 4}))
+    this.setState(prev => ({index: (prev.index + 1) % 8}));
   }
 
   _prev() {
-    this.setState(prev => ({index: (prev.index + 3) % 4}))
+    this.setState(prev => ({index: (prev.index + 7) % 8}));
   }
 }
 

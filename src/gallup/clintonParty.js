@@ -220,7 +220,7 @@ const clintonParty = [
   {start: new Date(`1993 Jan 24`), rep:33, ind:54, dem:79},
 ]
 
-const clintonAppData = {
+const clintonPartyData = {
   president: `Bill Clinton`,
   party: `Democrat`,
   chart: Object.assign({}, approvalChartDefault, {title: {text: `Presidential Approval Poll by party for Bill Clinton`,}}),
