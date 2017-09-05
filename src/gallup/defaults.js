@@ -1,17 +1,6 @@
-export const approvalChartDefault = {
-  chart: {
-    type:`area`,
-  },
-  title: {
-    text: `Presidential Approval Poll for George W. Bush`,
-  },
+const defaults = {
   subtitle: {
     text: `Source: Gallup.com`,
-  },
-  yAxis: {
-    title: {
-      text: `Approval %`,
-    }
   },
   xAxis: {
     title: {
@@ -25,6 +14,17 @@ export const approvalChartDefault = {
     verticalAlign: `bottom`,
     x: 0,
     y: 0,
+  },
+  yAxis: {
+    title: {
+      text: `Approval Percentage`,
+    }
+  },
+}
+
+export const approvalChartDefault = Object.assign({}, defaults, {
+  chart: {
+    type:`area`,
   },
   tooltip: {
     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
@@ -41,4 +41,4 @@ export const approvalChartDefault = {
       }
     }
   },
-}
+})
