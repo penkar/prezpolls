@@ -15,13 +15,29 @@ class HC extends React.Component {
     },
   }
 
+  constructor(props) {
+    super(props);
+    this._resize = this._resize.bind(this);
+    this.state = {chart:null};
+  }
+
   componentDidMount() {
     let {series, info} = this.props;
     let chart = Highcharts.chart(this.chart, Object.assign({}, info.chart, {series}));
+    // window.addEventlistener('resize', this._resize);
+    this.setState({chart});
+  }
+
+  componentWillUnMount() {
+    // this.removeEventListener('resize', this._resize);
   }
 
   render() {
     return <div ref={(chart) => (this.chart = chart)}></div>
+  }
+
+  _resize() {
+    // this.state.chart.//resize
   }
 }
 

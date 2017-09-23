@@ -2,30 +2,28 @@ import React from 'react'
 
 import {HC} from './hc'
 
-const PartyGraph = (data, info) => {
-  console.log(info);
-  return null;
-  let approval = [], disapproval = [], neutral = [];
+export function PartyGraph(data, info) {
+  let republican = [], independent = [], democrat = [];
   let {president} = info;
 
   for(let i = data.length -1; i > -1; i--) {
     let date = data[i]
-    approval.push([date.start.getTime(), date.app]);
-    disapproval.push([date.start.getTime(), date.dis]);
-    neutral.push([date.start.getTime(), date.neu]);
+    republican.push([date.start.getTime(), date.rep]);
+    independent.push([date.start.getTime(), date.ind]);
+    democrat.push([date.start.getTime(), date.dem]);
   }
   let series = [{
-    name: `Approval`,
-    type:'area',
-    data: approval
+    name: `Republican`,
+    type:'line',
+    data: republican
   },{
-    name: `Disapproval`,
-    type:'area',
-    data: disapproval,
+    name: `Independent`,
+    type:'line',
+    data: independent,
   },{
-    name: `Neutral`,
-    type:'area',
-    data: neutral,
+    name: `Democrat`,
+    type:'line',
+    data: democrat,
   }];
 
   return (
@@ -34,5 +32,3 @@ const PartyGraph = (data, info) => {
     </div>
   )
 }
-
-export {PartyGraph}

@@ -52,6 +52,7 @@ class App extends React.Component {
     let {index} = this.state;
     let prez = cycleData[index];
     let data = gallup[prez.president], info = gallup[prez.info], type = prez.type;
+    console.log(55, type);
 
     return (
       <div id='app'>

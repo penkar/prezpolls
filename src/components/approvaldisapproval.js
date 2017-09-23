@@ -1,7 +1,7 @@
 import React from 'react'
 import {HC} from './hc'
 
-const ApprovalDisapproval = (data, info) => {
+export function ApprovalDisapproval(data, info) {
   let approval = [], disapproval = [], neutral = [];
   let {president} = info;
 
@@ -25,11 +25,10 @@ const ApprovalDisapproval = (data, info) => {
     data: neutral,
   }];
 
+
   return (
     <div id='main'>
       <HC series={series} info={info} key={info.president}/>
     </div>
   )
 }
-
-export {ApprovalDisapproval}
