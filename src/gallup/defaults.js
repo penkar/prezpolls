@@ -20,12 +20,6 @@ const defaults = {
       text: `Approval Percentage`,
     }
   },
-}
-
-export const approvalChartDefault = Object.assign({}, defaults, {
-  chart: {
-    type:`area`,
-  },
   tooltip: {
     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
     split: true
@@ -41,4 +35,17 @@ export const approvalChartDefault = Object.assign({}, defaults, {
       }
     }
   },
+}
+
+export const approvalChartDefault = Object.assign({}, defaults, {
+  chart: {
+    type:`area`,
+  },
+
+})
+
+export const approvalByParty = Object.assign({}, defaults, {
+  chart: {
+    type:`line`,
+  }
 })

@@ -39,7 +39,7 @@ const clintonApp = [
   {start: new Date(`1999 Oct 8`), app:56, dis:39, neu:5},
   {start: new Date(`1999 Sep 23`), app:59, dis:38, neu:3},
   {start: new Date(`1999 Sep 10`), app:60, dis:38, neu:2},
-  {start: new Date(`1999 August`), app:60, dis:35, neu:5},
+  {start: new Date(`1999 Aug 22`), app:60, dis:35, neu:5},
   {start: new Date(`1999 Aug 16`), app:59, dis:36, neu:5},
   {start: new Date(`1999 Aug 3`), app:60, dis:35, neu:5},
   {start: new Date(`1999 Jul 22`), app:64, dis:31, neu:5},
