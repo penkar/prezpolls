@@ -23,6 +23,7 @@ class HC extends React.Component {
 
   componentDidMount() {
     let {series, info} = this.props;
+    console.log(info);
     let chart = Highcharts.chart(this.chart, Object.assign({}, info.chart, {series}));
     // window.addEventlistener('resize', this._resize);
     this.setState({chart});

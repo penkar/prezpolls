@@ -6,3 +6,4 @@ export * from './clintonApp';
 export * from './clintonParty';
 export * from './trumpApp';
 export * from './trumpParty';
+export * from './defaults'

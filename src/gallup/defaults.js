@@ -10,7 +10,7 @@ const defaults = {
   },
   legend: {
     layout: `vertical`,
-    align: `center`,
+    align: `right`,
     verticalAlign: `bottom`,
     x: 0,
     y: 0,
@@ -21,7 +21,7 @@ const defaults = {
     }
   },
   tooltip: {
-    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}%</b><br/>',
     split: true
   },
   plotOptions: {
@@ -37,15 +37,28 @@ const defaults = {
   },
 }
 
+export const overlapGraph = Object.assign({}, defaults, {
+  chart: {
+    type:'line',
+  },
+  title: {
+    text: `Presidential approval and disapproval for the prior four presidents.`,
+  },
+  legend: {
+    layout:`horizontal`,
+    align:`center`,
+    verticalAlign:`bottom`,
+  }
+});
+
 export const approvalChartDefault = Object.assign({}, defaults, {
   chart: {
     type:`area`,
   },
-
-})
+});
 
 export const approvalByParty = Object.assign({}, defaults, {
   chart: {
     type:`line`,
   }
-})
+});

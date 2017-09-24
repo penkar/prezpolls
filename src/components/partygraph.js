@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {HC} from './hc'
 
 export function PartyGraph(data, info) {

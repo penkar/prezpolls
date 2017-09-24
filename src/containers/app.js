@@ -2,7 +2,7 @@ import React from 'react';
 require('../style/app.scss');
 
 import * as gallup from '../gallup';
-import {ApprovalDisapproval, PartyGraph} from '../components';
+import {ApprovalDisapproval, PartyGraph, Overlap} from '../components';
 
 const cycleData = [{
   president:'clintonApp',
@@ -36,6 +36,8 @@ const cycleData = [{
   president:'trumpParty',
   info:'trumpPartyData',
   type:'party',
+},{
+  type:'overlap'
 }];
 
 class App extends React.Component {
@@ -52,7 +54,6 @@ class App extends React.Component {
     let {index} = this.state;
     let prez = cycleData[index];
     let data = gallup[prez.president], info = gallup[prez.info], type = prez.type;
-    console.log(55, type);
 
     return (
       <div id='app'>
@@ -64,17 +65,18 @@ class App extends React.Component {
 
         { type === 'appdis' && ApprovalDisapproval(data, info) }
         { type === 'party' && PartyGraph(data, info) }
+        { type === 'overlap' && Overlap(gallup) }
 
       </div>
     )
   }
 
   _next() {
-    this.setState(prev => ({index: (prev.index + 1) % 8}));
+    this.setState(prev => ({index: (prev.index + 1) % 9}));
   }
 
   _prev() {
-    this.setState(prev => ({index: (prev.index + 7) % 8}));
+    this.setState(prev => ({index: (prev.index + 8) % 9}));
   }
 }
 
