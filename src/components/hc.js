@@ -23,14 +23,13 @@ class HC extends React.Component {
 
   componentDidMount() {
     let {series, info} = this.props;
-    console.log(info);
     let chart = Highcharts.chart(this.chart, Object.assign({}, info.chart, {series}));
-    // window.addEventlistener('resize', this._resize);
+    window.addEventListener('resize', this._resize);
     this.setState({chart});
   }
 
   componentWillUnMount() {
-    // this.removeEventListener('resize', this._resize);
+    this.removeEventListener('resize', this._resize);
   }
 
   render() {
@@ -38,7 +37,7 @@ class HC extends React.Component {
   }
 
   _resize() {
-    // this.state.chart.//resize
+    this.state.chart.setSize(window.innerWidth, window.innerHeight - 64)
   }
 }
 
