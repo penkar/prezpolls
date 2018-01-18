@@ -2,6 +2,10 @@ import {approvalChartDefault} from './defaults.js'
 //http://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx
 
 const trumpApp = [
+  {start: new Date(`2018 Jan 8`), app:38, dis:57, neu:5},
+  {start: new Date(`2018 Jan 1`), app:37, dis:58, neu:4},
+  {start: new Date(`2017 Dec 25`), app:39, dis:55, neu:6},
+  {start: new Date(`2017 Dec 18`), app:37, dis:57, neu:6},
   {start: new Date(`2017 Dec 11`), app:35, dis:60, neu:5},
   {start: new Date(`2017 Dec 4`), app:36, dis:59, neu:5},
   {start: new Date(`2017 Nov 27`), app:35, dis:59, neu:5},
