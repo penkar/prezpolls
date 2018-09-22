@@ -1,4 +1,3 @@
- th = require('path');
 var webpack = require('webpack');
 
 module.exports = {
@@ -36,7 +35,7 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0']
+          presets: ['react', 'env', 'stage-0']
         },
       }
     }]
