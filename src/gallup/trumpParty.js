@@ -1,6 +1,20 @@
 import {approvalChartDefault} from './defaults.js'
 
 const trumpParty = [
+  {start:new Date(`2018 Dec 17`), rep:89, ind:39, dem:8},
+  {start:new Date(`2018 Dec 10`), rep:86, ind:37, dem:7},
+  {start:new Date(`2018 Dec 3`), rep:89, ind:38, dem:7},
+  {start:new Date(`2018 Nov 26`), rep:89, ind:39, dem:6},
+  {start:new Date(`2018 Nov 19`), rep:86, ind:34, dem:9},
+  {start:new Date(`2018 Nov 12`), rep:90, ind:37, dem:6},
+  {start:new Date(`2018 Nov 5`), rep:91, ind:34, dem:5},
+  {start:new Date(`2018 Oct 29`), rep:88, ind:39, dem:6},
+  {start:new Date(`2018 Oct 22`), rep:89, ind:37, dem:6},
+  {start:new Date(`2018 Oct 15`), rep:91, ind:39, dem:8},
+  {start:new Date(`2018 Oct 8`), rep:88, ind:36, dem:9},
+  {start:new Date(`2018 Oct 1`), rep:86, ind:39, dem:7},
+  {start:new Date(`2018 Sep 24`), rep:87, ind:37, dem:6},
+  {start:new Date(`2018 Sep 17`), rep:87, ind:34, dem:8},
   {start:new Date(`2018 Sep 10`), rep:88, ind:33, dem:6},
   {start:new Date(`2018 Sep 3`), rep:85, ind:36, dem:8},
   {start:new Date(`2018 Aug 27`), rep:85, ind:36, dem:9},
