@@ -15,3 +15,16 @@ Gallup will be changing their polling data starting in 2019. Instead of weekly d
 1. Run `npm run dev` .
 1. In your browser open `localhost:8000` .
 1. Profit.
+
+### Deploying to gh-pages (Needs Improvement).
+1. Run `npm start` .
+1. Run `cp index.html ./dist` .
+1. Remove `dist/` from index.html .
+1. Run `cp -r dist/ ../gh-pages-prez-polls` .
+1. Run `cd ../gh-pages-prez-polls` . 
+1. Run `git init` .
+1. Run `git add .` .
+1. Run `git commit -m "GH-Pages commit"` .
+1. Run `git remote add gh-pages git@github.com:penkar/prezpolls.git` .
+1. Run `git push origin gh-pages --force`
+
