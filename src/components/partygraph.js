@@ -2,16 +2,15 @@ import React from 'react'
 import {HC} from './hc'
 
 export function PartyGraph(data, info) {
-  let republican = [], independent = [], democrat = [];
-  let {president} = info;
-
+  const republican = [], independent = [], democrat = [];
+  const {president} = info;
   for(let i = data.length -1; i > -1; i--) {
     let date = data[i]
     republican.push([date.start.getTime(), date.rep]);
     independent.push([date.start.getTime(), date.ind]);
     democrat.push([date.start.getTime(), date.dem]);
   }
-  let series = [{
+  const series = [{
     name: `Republican`,
     type:'line',
     data: republican

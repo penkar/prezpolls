@@ -1,6 +1,5 @@
 import React from 'react';
 require('../style/app.scss');
-
 import * as gallup from '../gallup';
 import {ApprovalDisapproval, PartyGraph, Overlap} from '../components';
 
@@ -43,17 +42,13 @@ const cycleData = [{
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this._next = this._next.bind(this);
-    this._prev = this._prev.bind(this);
-    this.state = {
-      index: 0
-    }
+    this.state = {index: 0}
   }
 
   render() {
-    let {index} = this.state;
-    let prez = cycleData[index];
-    let data = gallup[prez.president], info = gallup[prez.info], type = prez.type;
+    const {index} = this.state;
+    const prez = cycleData[index];
+    const data = gallup[prez.president], info = gallup[prez.info], type = prez.type;
 
     return (
       <div id='app'>
@@ -63,21 +58,15 @@ class App extends React.Component {
           <div onClick={this._next} className='button'>Next</div>
         </div>
 
-        { type === 'appdis' && ApprovalDisapproval(data, info) }
-        { type === 'party' && PartyGraph(data, info) }
+        { type === 'appdis'  && ApprovalDisapproval(data, info) }
+        { type === 'party'   && PartyGraph(data, info) }
         { type === 'overlap' && Overlap(gallup) }
 
       </div>
-    )
+    );
   }
-
-  _next() {
-    this.setState(prev => ({index: (prev.index + 1) % 9}));
-  }
-
-  _prev() {
-    this.setState(prev => ({index: (prev.index + 8) % 9}));
-  }
+  _next = () => this.setState(prev => ({index: (prev.index + 1) % 9}));
+  _prev = () => this.setState(prev => ({index: (prev.index + 8) % 9}));
 }
 
 export {App}

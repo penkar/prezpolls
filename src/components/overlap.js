@@ -3,9 +3,13 @@ import {HC} from './hc'
 import {overlapGraph} from '../gallup'
 
 export function Overlap({bushApp, clintonApp, obamaApp, trumpApp}) {
-  let arr = [{data:clintonApp, prez:'Clinton'}, {data:bushApp, prez:'Bush'}, {data:obamaApp, prez:'Obama'}, {data:trumpApp, prez: 'Trump'}];
-  let series = [];
-
+  const arr = [
+    {data:clintonApp, prez:'Clinton'}, 
+    {data:bushApp, prez:'Bush'}, 
+    {data:obamaApp, prez:'Obama'}, 
+    {data:trumpApp, prez: 'Trump'}
+  ];
+  const series = [];
   for(let j = 0; j < 4; j++) {
     let app = [], dis = [], neu = [];
     let data = arr[j], info = arr[j].data;
@@ -33,14 +37,9 @@ export function Overlap({bushApp, clintonApp, obamaApp, trumpApp}) {
       data:neu,
     });
   }
-
-  let info = {
-    chart: overlapGraph
-  }
-
   return (
     <div id='main'>
-      <HC series={series} info={info} key={'overlap'}/>
+      <HC series={series} info={{chart: overlapGraph}} key={'overlap'}/>
     </div>
   )
 }
