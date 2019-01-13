@@ -5,7 +5,7 @@ All information here in was gathered from the [Gallup.com](http://news.gallup.co
 
 ## Update
 
-Gallup will be changing their polling data starting in 2019. Instead of weekly data points they will be switching to monthly data points. This will make lines for Trump far more linear than other presidents.
+Gallup will be changing their polling data starting in 2019. Instead of weekly data points they will be switching to monthly data points. This will make lines for Trump far more orderly than other presidents.
 
 ### How to run?
 1. Navigate to your development folder.
