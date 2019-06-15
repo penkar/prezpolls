@@ -12,11 +12,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.scss$/,
-      use: [
-        "style-loader",
-        "css-loader",
-        "sass-loader"
-      ]
+      use: ["style-loader", "css-loader", "sass-loader"]
     },{
       test:/\.ttf/,
       exclude: /(node_modules|bower_components)/,
@@ -33,13 +29,11 @@ module.exports = {
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
       use: {
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env', 'stage-0']
-        },
+        loader: 'babel-loader'
       }
     }]
   },
+  watch: true,
   devtool: 'source-map',
-  watch: true
+  mode: 'development'
 }
