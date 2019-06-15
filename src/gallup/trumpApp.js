@@ -2,6 +2,15 @@ import {approvalChartDefault} from './defaults.js'
 //http://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx
 
 const trumpApp = [
+  {start: new Date(`2019 May 15`), app:40, dis:55, neu:4},
+  {start: new Date(`2019 May 1`), app:42, dis:52, neu:6},
+  {start: new Date(`2019 Apr 17`), app:46, dis:50, neu:4},
+  {start: new Date(`2019 Apr 1`), app:45, dis:51, neu:4},
+  {start: new Date(`2019 Mar 1`), app:39, dis:57, neu:4},
+  {start: new Date(`2019 Feb 12`), app:43, dis:54, neu:3},
+  {start: new Date(`2019 Feb 1`), app:44, dis:52, neu:4},
+  {start: new Date(`2019 Jan 21`), app:37, dis:59, neu:3},
+  {start: new Date(`2019 Jan 2`), app:37, dis:59, neu:4},
   {start: new Date(`2018 Dec 17`), app:39, dis:55, neu:5},
   {start: new Date(`2018 Dec 10`), app:38, dis:57, neu:4},
   {start: new Date(`2018 Dec 3`), app: 40, dis:56, neu:4},
