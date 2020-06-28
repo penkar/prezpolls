@@ -1,9 +1,8 @@
-import React from "react"
-import {HC} from "./hc"
+import React from "react";
+import {HC} from "./hc";
 
 export function ApprovalDisapproval(data, info) {
   const approval = [], disapproval = [], neutral = [];
-  const {president} = info;
 
   for(let i = data.length -1; i > -1; i--) {
     let date = data[i]

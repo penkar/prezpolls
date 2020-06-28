@@ -1,6 +1,6 @@
-import React from "react"
-import {HC} from "./hc"
-import {overlapGraph} from "../gallup"
+import React from "react";
+import {HC} from "./hc";
+import {overlapGraph} from "../gallup";
 
 export function Overlap({bushApp, clintonApp, obamaApp, trumpApp}) {
   const arr = [

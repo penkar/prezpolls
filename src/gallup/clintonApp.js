@@ -1,4 +1,4 @@
-import {approvalChartDefault} from "./defaults.js"
+import {approvalChartDefault} from "./defaults.js";
 
 const clintonApp = [
   {start: new Date(`2001 Jan 10`), app:66, dis:29, neu:5},

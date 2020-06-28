@@ -1,4 +1,4 @@
-import {approvalChartDefault} from "./defaults.js"
+import {approvalChartDefault} from "./defaults.js";
 
 const obamaParty = [
   {start: new Date(`2017 Jan 16`), rep:14, ind:61, dem:95},

@@ -1,37 +1,20 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Highcharts from "highcharts"
+import React, {useEffect, useRef} from "react";
+import PropTypes from "prop-types";
+import Highcharts from "highcharts";
 
-export class HC extends React.Component {
-  static propTypes = {
-    series: PropTypes.array,
-    info: PropTypes.object,
-  }
-  static defaultTypes = {
-    series: [],
-    info: {
-      chart:{}
-    }
-  }
+export function HC ({series=[], info={chart:{}}}) {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const chart = Highcharts.chart(chartRef.current, Object.assign({}, info.chart, {series}));
+    const resize = () => chart.setSize(window.innerWidth, window.innerHeight - 64);
 
-  constructor(props) {
-    super(props);
-    this.state = {chart:null};
-  }
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
+  },[]);
 
-  componentDidMount() {
-    const {series, info} = this.props;
-    const chart = Highcharts.chart(this.chart, Object.assign({}, info.chart, {series}));
-    window.addEventListener("resize", this._resize);
-    this.setState({chart});
-  }
-
-  componentWillUnMount() {
-    this.removeEventListener("resize", this._resize);
-  }
-
-  render() {
-    return <div ref={(chart) => (this.chart = chart)}></div>
-  }
-  _resize = () => this.state.chart.setSize(window.innerWidth, window.innerHeight - 64)
+  return <div ref={chartRef}></div>;
+}
+HC.propTypes = {
+  series: PropTypes.array,
+  info: PropTypes.object,
 }

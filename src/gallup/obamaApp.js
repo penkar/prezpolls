@@ -1,4 +1,4 @@
-import {approvalChartDefault} from "./defaults.js"
+import {approvalChartDefault} from "./defaults.js";
 
 const obamaApp = [
   {start:new Date(`2017 Jan 16`), app:59, dis:37, neu:4},

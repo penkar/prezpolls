@@ -1,5 +1,5 @@
-import React from "react"
-import {HC} from "./hc"
+import React from "react";
+import {HC} from "./hc";
 
 export function PartyGraph(data, info) {
   const republican = [], independent = [], democrat = [];
