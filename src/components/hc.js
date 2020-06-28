@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Highcharts from 'highcharts'
+import React from "react"
+import PropTypes from "prop-types"
+import Highcharts from "highcharts"
 
-class HC extends React.Component {
+export class HC extends React.Component {
   static propTypes = {
     series: PropTypes.array,
     info: PropTypes.object,
@@ -22,12 +22,12 @@ class HC extends React.Component {
   componentDidMount() {
     const {series, info} = this.props;
     const chart = Highcharts.chart(this.chart, Object.assign({}, info.chart, {series}));
-    window.addEventListener('resize', this._resize);
+    window.addEventListener("resize", this._resize);
     this.setState({chart});
   }
 
   componentWillUnMount() {
-    this.removeEventListener('resize', this._resize);
+    this.removeEventListener("resize", this._resize);
   }
 
   render() {
@@ -35,4 +35,3 @@ class HC extends React.Component {
   }
   _resize = () => this.state.chart.setSize(window.innerWidth, window.innerHeight - 64)
 }
-export {HC}

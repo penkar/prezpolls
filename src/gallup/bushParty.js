@@ -1,4 +1,4 @@
-import {approvalChartDefault} from './defaults.js'
+import {approvalChartDefault} from "./defaults.js"
 
 const bushParty = [
   {start: new Date(`2009 Jan 9`), rep:75, ind:28, dem:6},

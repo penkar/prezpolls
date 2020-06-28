@@ -1,4 +1,4 @@
-import {approvalChartDefault} from './defaults.js'
+import {approvalChartDefault} from "./defaults.js"
 //http://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx
 
 const trumpApp = [

@@ -1,4 +1,4 @@
-import {approvalChartDefault} from './defaults.js'
+import {approvalChartDefault} from "./defaults.js"
 
 const trumpParty = [
   {start:new Date(`2020 May 28`), rep:85, ind:39, dem:5},

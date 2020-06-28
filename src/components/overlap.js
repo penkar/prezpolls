@@ -1,13 +1,13 @@
-import React from 'react'
-import {HC} from './hc'
-import {overlapGraph} from '../gallup'
+import React from "react"
+import {HC} from "./hc"
+import {overlapGraph} from "../gallup"
 
 export function Overlap({bushApp, clintonApp, obamaApp, trumpApp}) {
   const arr = [
-    {data:clintonApp, prez:'Clinton'}, 
-    {data:bushApp, prez:'Bush'}, 
-    {data:obamaApp, prez:'Obama'}, 
-    {data:trumpApp, prez: 'Trump'}
+    {data:clintonApp, prez:"Clinton"}, 
+    {data:bushApp, prez:"Bush"}, 
+    {data:obamaApp, prez:"Obama"}, 
+    {data:trumpApp, prez: "Trump"}
   ];
   const series = [];
   for(let j = 0; j < 4; j++) {
@@ -23,23 +23,23 @@ export function Overlap({bushApp, clintonApp, obamaApp, trumpApp}) {
 
     series.push({
       name:`${data.prez} Approval`,
-      type:'line',
+      type:"line",
       data:app,
     });
     series.push({
       name:`${data.prez} Dissapproval`,
-      type:'line',
+      type:"line",
       data:dis,
     });
     series.push({
       name:`${data.prez} Neutral`,
-      type:'line',
+      type:"line",
       data:neu,
     });
   }
   return (
-    <div id='main'>
-      <HC series={series} info={{chart: overlapGraph}} key={'overlap'}/>
+    <div id="main">
+      <HC series={series} info={{chart: overlapGraph}} key={"overlap"}/>
     </div>
   )
 }

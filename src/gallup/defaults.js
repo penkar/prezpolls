@@ -21,17 +21,17 @@ const defaults = {
     }
   },
   tooltip: {
-    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}%</b><br/>',
+    pointFormat: "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}%</b><br/>",
     split: true
   },
   plotOptions: {
     area: {
-      stacking: 'percent',
-      lineColor: '#ffffff',
+      stacking: "percent",
+      lineColor: "#ffffff",
       lineWidth: 1,
       marker: {
         lineWidth: 1,
-        lineColor: '#ffffff'
+        lineColor: "#ffffff"
       }
     }
   },
@@ -40,7 +40,7 @@ const defaults = {
 export const overlapGraph = Object.assign({}, defaults, {
   chart: {
     height:window.innerHeight - 64,
-    type:'line',
+    type:"line",
   },
   title: {
     text: `Presidential approval and disapproval for the prior four presidents.`,

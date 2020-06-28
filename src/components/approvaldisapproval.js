@@ -1,5 +1,5 @@
-import React from 'react'
-import {HC} from './hc'
+import React from "react"
+import {HC} from "./hc"
 
 export function ApprovalDisapproval(data, info) {
   const approval = [], disapproval = [], neutral = [];
@@ -13,19 +13,19 @@ export function ApprovalDisapproval(data, info) {
   }
   const series = [{
     name: `Approval`,
-    type:'area',
+    type:"area",
     data: approval
   },{
     name: `Disapproval`,
-    type:'area',
+    type:"area",
     data: disapproval,
   },{
     name: `Neutral`,
-    type:'area',
+    type:"area",
     data: neutral,
   }];
   return (
-    <div id='main'>
+    <div id="main">
       <HC series={series} info={info} key={info.president}/>
     </div>
   )

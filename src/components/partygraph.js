@@ -1,5 +1,5 @@
-import React from 'react'
-import {HC} from './hc'
+import React from "react"
+import {HC} from "./hc"
 
 export function PartyGraph(data, info) {
   const republican = [], independent = [], democrat = [];
@@ -12,20 +12,20 @@ export function PartyGraph(data, info) {
   }
   const series = [{
     name: `Republican`,
-    type:'line',
+    type:"line",
     data: republican
   },{
     name: `Independent`,
-    type:'line',
+    type:"line",
     data: independent,
   },{
     name: `Democrat`,
-    type:'line',
+    type:"line",
     data: democrat,
   }];
 
   return (
-    <div id='main'>
+    <div id="main">
       <HC series={series} info={info} key={info.president}/>
     </div>
   )
