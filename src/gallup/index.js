@@ -1,3 +1,5 @@
+export * from "./bidenApp";
+export * from "./bidenParty";
 export * from "./obamaApp";
 export * from "./obamaParty";
 export * from "./bushApp";

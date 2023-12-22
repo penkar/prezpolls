@@ -36,3 +36,13 @@ const bidenApp = [
   { start: new Date(`2021 Feb 3`), app: 56, dis: 40, neu: 5 },
   { start: new Date(`2021 Jan 21`), app: 57, dis: 37, neu: 6 },
 ];
+
+const bidenAppData = {
+  president: `Joe Biden`,
+  party: `democrat`,
+  chart: Object.assign({}, approvalChartDefault, {
+    title: { text: `Presidential Approval Poll for Joe Biden` },
+  }),
+};
+
+export { bidenApp, bidenAppData };

@@ -36,3 +36,13 @@ const bidenarty = [
   { start: new Date(`2021 Feb 3`), rep: 12, ind: 53, dem: 96 },
   { start: new Date(`2021 Jan 21`), rep: 11, ind: 61, dem: 98 },
 ];
+
+const bidenPartyData = {
+  president: `Joe Biden`,
+  party: `democrat`,
+  chart: Object.assign({}, approvalChartDefault, {
+    title: { text: `Presidential Approval Poll by party for Joe Biden` },
+  }),
+};
+
+export { bidenParty, bidenPartyData };
