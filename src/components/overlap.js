@@ -1,45 +1,49 @@
 import React from "react";
-import {HC} from "./hc";
-import {overlapGraph} from "../gallup";
+import { HC } from "./hc";
+import { overlapGraph } from "../gallup";
 
-export function Overlap({bushApp, clintonApp, obamaApp, trumpApp}) {
+export function Overlap({ bushApp, clintonApp, obamaApp, trumpApp, bidenApp }) {
   const arr = [
-    {data:clintonApp, prez:"Clinton"}, 
-    {data:bushApp, prez:"Bush"}, 
-    {data:obamaApp, prez:"Obama"}, 
-    {data:trumpApp, prez: "Trump"}
+    { data: clintonApp, prez: "Clinton" },
+    { data: bushApp, prez: "Bush" },
+    { data: obamaApp, prez: "Obama" },
+    { data: trumpApp, prez: "Trump" },
+    { data: bidenApp, prez: "Biden" },
   ];
   const series = [];
-  for(let j = 0; j < 4; j++) {
-    let app = [], dis = [], neu = [];
-    let data = arr[j], info = arr[j].data;
+  for (let j = 0; j < 4; j++) {
+    let app = [],
+      dis = [],
+      neu = [];
+    let data = arr[j],
+      info = arr[j].data;
 
-    for(let i = info.length -1; i > -1; i--) {
-      let date = info[i]
-      app.push([date.start.getTime() - (252460800000 * j), date.app]);
-      dis.push([date.start.getTime() - (252460800000 * j), date.dis]);
-      neu.push([date.start.getTime() - (252460800000 * j), date.neu]);
+    for (let i = info.length - 1; i > -1; i--) {
+      let date = info[i];
+      app.push([date.start.getTime() - 252460800000 * j, date.app]);
+      dis.push([date.start.getTime() - 252460800000 * j, date.dis]);
+      neu.push([date.start.getTime() - 252460800000 * j, date.neu]);
     }
 
     series.push({
-      name:`${data.prez} Approval`,
-      type:"line",
-      data:app,
+      name: `${data.prez} Approval`,
+      type: "line",
+      data: app,
     });
     series.push({
-      name:`${data.prez} Dissapproval`,
-      type:"line",
-      data:dis,
+      name: `${data.prez} Dissapproval`,
+      type: "line",
+      data: dis,
     });
     series.push({
-      name:`${data.prez} Neutral`,
-      type:"line",
-      data:neu,
+      name: `${data.prez} Neutral`,
+      type: "line",
+      data: neu,
     });
   }
   return (
     <div id="main">
-      <HC series={series} info={{chart: overlapGraph}} key={"overlap"}/>
+      <HC series={series} info={{ chart: overlapGraph }} key={"overlap"} />
     </div>
-  )
+  );
 }
