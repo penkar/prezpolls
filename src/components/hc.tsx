@@ -1,10 +1,20 @@
-import React, { useEffect, useRef } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import Highcharts from "highcharts";
 
-export function HC({ series = [], info = { chart: {} } }) {
-  const chartRef = useRef(null);
-  useEffect(() => {
+interface Props {
+  series: {
+    name: string;
+    type: string;
+    data: number[][];
+  }[];
+  info: any;
+}
+
+export function HC({ series = [], info = { chart: {} } }: Props) {
+  const chartRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (!chartRef.current) return;
     const chart = Highcharts.chart(
       chartRef.current,
       Object.assign({}, info.chart, { series })
@@ -18,7 +28,3 @@ export function HC({ series = [], info = { chart: {} } }) {
 
   return <div ref={chartRef}></div>;
 }
-HC.propTypes = {
-  series: PropTypes.array,
-  info: PropTypes.object,
-};
