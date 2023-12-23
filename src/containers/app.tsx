@@ -6,7 +6,7 @@ import {
   Overlap,
 } from "../components/index.ts";
 
-require("../style/app.scss");
+import styles from "./app.module.scss";
 
 const cycleData = [
   {
@@ -65,13 +65,13 @@ export const App = () => {
     info = gallup[prez.info];
 
   return (
-    <div id="app">
-      <div id="header">
-        <div onClick={prevEvent} className="button">
+    <div className={styles.app}>
+      <div className={styles.header}>
+        <div onClick={prevEvent} className={styles.button}>
           Previous
         </div>
-        <div id="title"></div>
-        <div onClick={nextEvent} className="button">
+        <div className={styles.title}></div>
+        <div onClick={nextEvent} className={styles.button}>
           Next
         </div>
       </div>

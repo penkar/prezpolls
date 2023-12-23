@@ -1,5 +1,6 @@
 import React from "react";
 import Highcharts from "highcharts";
+import styles from "./hc.module.scss";
 
 import type { SeriesData } from "./types.ts";
 
@@ -25,7 +26,7 @@ export function HichChart({ series = [], info = { chart: {} } }: Props) {
   }, []);
 
   return (
-    <div id="main">
+    <div className={styles.main}>
       <div ref={chartRef}></div>;
     </div>
   );
