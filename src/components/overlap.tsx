@@ -1,35 +1,27 @@
 import React from "react";
-import { HC } from "./hc.tsx";
+import { HichChart } from "./hc.tsx";
 import { overlapGraph } from "../gallup/index.ts";
 
-type AppData = {
-  app: number;
-  dis: number;
-  neu: number;
-  start: Date;
-}[];
+import type {
+  ApprovalDisprovalData,
+  GraphDataPoint,
+  SeriesData,
+} from "./types.ts";
 
 interface Props {
-  bushApp: AppData;
-  clintonApp: AppData;
-  obamaApp: AppData;
-  trumpApp: AppData;
-  bidenApp: AppData;
+  bidenApp: ApprovalDisprovalData;
+  bushApp: ApprovalDisprovalData;
+  clintonApp: ApprovalDisprovalData;
+  obamaApp: ApprovalDisprovalData;
+  trumpApp: ApprovalDisprovalData;
 }
 
-type GraphData = number[][];
-type SeriesData = {
-  name: string;
-  type: string;
-  data: GraphData;
-}[];
-
 export function Overlap({
+  bidenApp,
   bushApp,
   clintonApp,
   obamaApp,
   trumpApp,
-  bidenApp,
 }: Props) {
   const arr = [
     { data: clintonApp, prez: "Clinton" },
@@ -40,11 +32,11 @@ export function Overlap({
   ];
   const series: SeriesData = [];
   for (let j = 0; j < 4; j++) {
-    const app: GraphData = [],
-      dis: GraphData = [],
-      neu: GraphData = [];
-    const data = arr[j],
-      info = arr[j].data;
+    const app: GraphDataPoint = [];
+    const dis: GraphDataPoint = [];
+    const neu: GraphDataPoint = [];
+    const data = arr[j];
+    const info = arr[j].data;
 
     for (let i = info.length - 1; i > -1; i--) {
       const date = info[i];
@@ -71,8 +63,6 @@ export function Overlap({
   }
 
   return (
-    <div id="main">
-      <HC series={series} info={{ chart: overlapGraph }} key="overlap" />
-    </div>
+    <HichChart series={series} info={{ chart: overlapGraph }} key="overlap" />
   );
 }

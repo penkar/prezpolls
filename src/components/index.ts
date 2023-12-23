@@ -1,3 +1,3 @@
-export * from "./approvaldisapproval";
-export * from "./partygraph";
-export * from "./overlap";
+export { ApprovalDisapproval } from "./approvaldisapproval.tsx";
+export { PartyGraph } from "./partygraph.tsx";
+export { Overlap } from "./overlap.tsx";

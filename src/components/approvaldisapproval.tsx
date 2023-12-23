@@ -1,40 +1,41 @@
 import React from "react";
-import { HC } from "./hc.tsx";
+import { HichChart } from "./hc.tsx";
 
-type GraphData = number[][];
+import type { ApprovalDisprovalData, GraphDataPoint } from "./types.ts";
 
-export function ApprovalDisapproval({ data, info }) {
-  const approval: GraphData = [],
-    disapproval: GraphData = [],
-    neutral: GraphData = [];
+interface Props {
+  data: ApprovalDisprovalData;
+  info: any;
+}
+
+export function ApprovalDisapproval({ data, info }: Props) {
+  const approval: GraphDataPoint = [];
+  const disapproval: GraphDataPoint = [];
+  const neutral: GraphDataPoint = [];
 
   for (let i = data.length - 1; i > -1; i--) {
-    const date = data[i];
-    approval.push([date.start.getTime(), date.app]);
-    disapproval.push([date.start.getTime(), date.dis]);
-    neutral.push([date.start.getTime(), date.neu]);
+    const { start, app, dis, neu } = data[i];
+    approval.push([start.getTime(), app]);
+    disapproval.push([start.getTime(), dis]);
+    neutral.push([start.getTime(), neu]);
   }
   const series = [
     {
+      data: approval,
       name: `Approval`,
       type: "area",
-      data: approval,
     },
     {
+      data: disapproval,
       name: `Disapproval`,
       type: "area",
-      data: disapproval,
     },
     {
+      data: neutral,
       name: `Neutral`,
       type: "area",
-      data: neutral,
     },
   ];
 
-  return (
-    <div id="main">
-      <HC series={series} info={info} key={info.president} />
-    </div>
-  );
+  return <HichChart series={series} info={info} key={info.president} />;
 }

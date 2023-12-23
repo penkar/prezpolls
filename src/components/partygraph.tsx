@@ -1,19 +1,17 @@
 import React from "react";
-import { HC } from "./hc.tsx";
+import { HichChart } from "./hc.tsx";
 
-type DataType = {
-  rep: number;
-  ind: number;
-  dem: number;
-  start: Date;
-}[];
+import type { PartyGraphData, GraphDataPoint } from "./types.ts";
 
-type PartyType = number[][];
+interface Props {
+  data: PartyGraphData;
+  info: any;
+}
 
-export function PartyGraph({ data, info }: { data: DataType; info: any }) {
-  const republican: PartyType = [],
-    independent: PartyType = [],
-    democrat: PartyType = [];
+export function PartyGraph({ data, info }: Props) {
+  const republican: GraphDataPoint = [];
+  const independent: GraphDataPoint = [];
+  const democrat: GraphDataPoint = [];
 
   for (let i = data.length - 1; i > -1; i--) {
     const { rep, ind, dem, start } = data[i];
@@ -23,25 +21,21 @@ export function PartyGraph({ data, info }: { data: DataType; info: any }) {
   }
   const series = [
     {
+      data: republican,
       name: `Republican`,
       type: "line",
-      data: republican,
     },
     {
+      data: independent,
       name: `Independent`,
       type: "line",
-      data: independent,
     },
     {
+      data: democrat,
       name: `Democrat`,
       type: "line",
-      data: democrat,
     },
   ];
 
-  return (
-    <div id="main">
-      <HC series={series} info={info} key={info.president} />
-    </div>
-  );
+  return <HichChart series={series} info={info} key={info.president} />;
 }

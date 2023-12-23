@@ -1,8 +1,10 @@
 import React from "react";
 import * as gallup from "../gallup/index.ts";
-import { ApprovalDisapproval } from "../components/approvaldisapproval.tsx";
-import { PartyGraph } from "../components/partygraph.tsx";
-import { Overlap } from "../components/overlap.tsx";
+import {
+  ApprovalDisapproval,
+  PartyGraph,
+  Overlap,
+} from "../components/index.ts";
 
 require("../style/app.scss");
 
@@ -10,57 +12,46 @@ const cycleData = [
   {
     president: "clintonApp",
     info: "clintonAppData",
-    type: "appdis",
   },
   {
     president: "bushApp",
     info: "bushAppData",
-    type: "appdis",
   },
   {
     president: "obamaApp",
     info: "obamaAppData",
-    type: "appdis",
   },
   {
     president: "trumpApp",
     info: "trumpAppData",
-    type: "appdis",
   },
   {
     president: "bidenApp",
     info: "bidenAppData",
-    type: "appdis",
   },
   {
     president: "clintonParty",
     info: "clintonPartyData",
-    type: "party",
   },
   {
     president: "bushParty",
     info: "bushPartyData",
-    type: "party",
   },
   {
     president: "obamaParty",
     info: "obamaPartyData",
-    type: "party",
   },
   {
     president: "trumpParty",
     info: "trumpPartyData",
-    type: "party",
   },
   {
     president: "bidenParty",
     info: "bidenPartyData",
-    type: "party",
   },
   {
     president: "overlap",
     info: "overlap",
-    type: "overlap",
   },
 ];
 
@@ -71,8 +62,7 @@ export const App = () => {
 
   const prez = cycleData[index];
   const data = gallup[prez.president],
-    info = gallup[prez.info],
-    type = prez.type;
+    info = gallup[prez.info];
 
   return (
     <div id="app">
@@ -85,10 +75,9 @@ export const App = () => {
           Next
         </div>
       </div>
-
-      {type === "appdis" && <ApprovalDisapproval data={data} info={info} />}
-      {type === "party" && <PartyGraph data={data} info={info} />}
-      {type === "overlap" && <Overlap {...gallup} />}
+      {index < 5 && <ApprovalDisapproval data={data} info={info} />}
+      {index > 4 && index < 10 && <PartyGraph data={data} info={info} />}
+      {index === 10 && <Overlap {...gallup} />}
     </div>
   );
 };

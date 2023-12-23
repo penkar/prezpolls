@@ -1,16 +1,14 @@
 import React from "react";
 import Highcharts from "highcharts";
 
+import type { SeriesData } from "./types.ts";
+
 interface Props {
-  series: {
-    name: string;
-    type: string;
-    data: number[][];
-  }[];
+  series: SeriesData;
   info: any;
 }
 
-export function HC({ series = [], info = { chart: {} } }: Props) {
+export function HichChart({ series = [], info = { chart: {} } }: Props) {
   const chartRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -26,5 +24,9 @@ export function HC({ series = [], info = { chart: {} } }: Props) {
     return () => window.removeEventListener("resize", resize);
   }, []);
 
-  return <div ref={chartRef}></div>;
+  return (
+    <div id="main">
+      <div ref={chartRef}></div>;
+    </div>
+  );
 }
