@@ -27,5 +27,5 @@ Gallup will be changing their polling data starting in 2019. Instead of weekly d
 1. Run `git checkout -b gh-pages`
 1. Run `git add .` .
 1. Run `git commit -m "GH-Pages commit"` .
-1. Run `git remote add git@github.com:penkar/prezpolls.git` .
+1. Run `git remote add gh-pages git@github.com:penkar/prezpolls.git` .
 1. Run `git push gh-pages --force`
