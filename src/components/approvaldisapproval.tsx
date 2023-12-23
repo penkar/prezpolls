@@ -3,7 +3,7 @@ import { HC } from "./hc.tsx";
 
 type GraphData = number[][];
 
-export function ApprovalDisapproval(data, info) {
+export function ApprovalDisapproval({ data, info }) {
   const approval: GraphData = [],
     disapproval: GraphData = [],
     neutral: GraphData = [];

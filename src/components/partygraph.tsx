@@ -10,13 +10,13 @@ type DataType = {
 
 type PartyType = number[][];
 
-export function PartyGraph(dataSeries: DataType, info) {
+export function PartyGraph({ data, info }: { data: DataType; info: any }) {
   const republican: PartyType = [],
     independent: PartyType = [],
     democrat: PartyType = [];
 
-  for (let i = dataSeries.length - 1; i > -1; i--) {
-    const { rep, ind, dem, start } = dataSeries[i];
+  for (let i = data.length - 1; i > -1; i--) {
+    const { rep, ind, dem, start } = data[i];
     republican.push([start.getTime(), rep]);
     independent.push([start.getTime(), ind]);
     democrat.push([start.getTime(), dem]);

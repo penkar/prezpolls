@@ -28,6 +28,11 @@ const cycleData = [
     type: "appdis",
   },
   {
+    president: "bidenApp",
+    info: "bidenAppData",
+    type: "appdis",
+  },
+  {
     president: "clintonParty",
     info: "clintonPartyData",
     type: "party",
@@ -61,8 +66,8 @@ const cycleData = [
 
 export const App = () => {
   const [index, setIndex] = React.useState(0);
-  const nextEvent = () => setIndex((index) => (index + 1) % 10);
-  const prevEvent = () => setIndex((index) => (index + 8) % 10);
+  const nextEvent = () => setIndex((index) => (index + 1) % 11);
+  const prevEvent = () => setIndex((index) => (index + 10) % 11);
 
   const prez = cycleData[index];
   const data = gallup[prez.president],
@@ -81,9 +86,9 @@ export const App = () => {
         </div>
       </div>
 
-      {type === "appdis" && ApprovalDisapproval(data, info)}
-      {type === "party" && PartyGraph(data, info)}
-      {type === "overlap" && Overlap(gallup)}
+      {type === "appdis" && <ApprovalDisapproval data={data} info={info} />}
+      {type === "party" && <PartyGraph data={data} info={info} />}
+      {type === "overlap" && <Overlap {...gallup} />}
     </div>
   );
 };

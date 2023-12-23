@@ -1,6 +1,6 @@
 import { approvalChartDefault } from "./defaults.ts";
 
-export const bidenarty = [
+export const bidenParty = [
   { start: new Date(`2023 Nov 1`), rep: 5, ind: 27, dem: 83 },
   { start: new Date(`2023 Oct 2`), rep: 5, ind: 35, dem: 75 },
   { start: new Date(`2023 Sep 1`), rep: 5, ind: 39, dem: 86 },
