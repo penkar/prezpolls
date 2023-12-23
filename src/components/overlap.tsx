@@ -16,6 +16,8 @@ interface Props {
   trumpApp: ApprovalDisprovalData;
 }
 
+const YEAR = 31536000000;
+
 export function Overlap({
   bidenApp,
   bushApp,
@@ -24,43 +26,41 @@ export function Overlap({
   trumpApp,
 }: Props) {
   const arr = [
-    { data: clintonApp, prez: "Clinton" },
-    { data: bushApp, prez: "Bush" },
-    { data: obamaApp, prez: "Obama" },
-    { data: trumpApp, prez: "Trump" },
-    { data: bidenApp, prez: "Biden" },
+    { data: clintonApp, prez: "Clinton", offset: 0 },
+    { data: bushApp, prez: "Bush", offset: 2 },
+    { data: obamaApp, prez: "Obama", offset: 4 },
+    { data: trumpApp, prez: "Trump", offset: 6 },
+    { data: bidenApp, prez: "Biden", offset: 7 },
   ];
   const series: SeriesData = [];
-  for (let j = 0; j < 4; j++) {
+  arr.forEach(({ data, offset, prez }, j) => {
     const app: GraphDataPoint = [];
     const dis: GraphDataPoint = [];
     const neu: GraphDataPoint = [];
-    const data = arr[j];
-    const info = arr[j].data;
 
-    for (let i = info.length - 1; i > -1; i--) {
-      const date = info[i];
-      app.push([date.start.getTime() - 252460800000 * j, date.app]);
-      dis.push([date.start.getTime() - 252460800000 * j, date.dis]);
-      neu.push([date.start.getTime() - 252460800000 * j, date.neu]);
+    for (let i = 0; i < data.length; i++) {
+      const date = data[i];
+      app.push([date.start.getTime() - YEAR * offset * 4, date.app]);
+      dis.push([date.start.getTime() - YEAR * offset * 4, date.dis]);
+      neu.push([date.start.getTime() - YEAR * offset * 4, date.neu]);
     }
 
     series.push({
-      name: `${data.prez} Approval`,
+      name: `${prez} Approval`,
       type: "line",
       data: app,
     });
     series.push({
-      name: `${data.prez} Dissapproval`,
+      name: `${prez} Dissapproval`,
       type: "line",
       data: dis,
     });
     series.push({
-      name: `${data.prez} Neutral`,
+      name: `${prez} Neutral`,
       type: "line",
       data: neu,
     });
-  }
+  });
 
   return (
     <HichChart series={series} info={{ chart: overlapGraph }} key="overlap" />

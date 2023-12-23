@@ -13,7 +13,7 @@ export function PartyGraph({ data, info }: Props) {
   const independent: GraphDataPoint = [];
   const democrat: GraphDataPoint = [];
 
-  for (let i = data.length - 1; i > -1; i--) {
+  for (let i = 0; i < data.length; i++) {
     const { rep, ind, dem, start } = data[i];
     republican.push([start.getTime(), rep]);
     independent.push([start.getTime(), ind]);

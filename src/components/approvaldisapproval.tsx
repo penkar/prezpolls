@@ -13,7 +13,7 @@ export function ApprovalDisapproval({ data, info }: Props) {
   const disapproval: GraphDataPoint = [];
   const neutral: GraphDataPoint = [];
 
-  for (let i = data.length - 1; i > -1; i--) {
+  for (let i = 0; i < data.length; i++) {
     const { start, app, dis, neu } = data[i];
     approval.push([start.getTime(), app]);
     disapproval.push([start.getTime(), dis]);
