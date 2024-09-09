@@ -64,7 +64,6 @@ export const App = () => {
 
   const data = gallup[prez.president];
   const info = gallup[prez.info];
-  console.log(66, { index, gallup, info });
 
   return (
     <div className={styles.app}>

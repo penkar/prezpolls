@@ -1,4 +1,4 @@
-import { ChartType } from "./types";
+import { ChartType } from "../types";
 
 const defaults: ChartType = {
   subtitle: {
@@ -11,8 +11,8 @@ const defaults: ChartType = {
     type: `datetime`,
   },
   legend: {
-    layout: `vertical`,
     align: `right`,
+    layout: `vertical`,
     verticalAlign: `bottom`,
     x: 0,
     y: 0,
@@ -29,9 +29,9 @@ const defaults: ChartType = {
   },
   plotOptions: {
     area: {
-      stacking: "percent",
       lineColor: "#ffffff",
       lineWidth: 1,
+      stacking: "percent",
       marker: {
         lineWidth: 1,
         lineColor: "#ffffff",

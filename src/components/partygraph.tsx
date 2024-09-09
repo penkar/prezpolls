@@ -1,9 +1,7 @@
 import React from "react";
-import { HichChart } from "./hc.tsx";
+import HichChart from "./highChartCustom.tsx";
 
-import type { PartyGraphData, GraphDataPoint } from "./types.ts";
-
-import type { ChartType } from "../gallup/types.ts";
+import type { ChartType, GraphDataPoint, PartyGraphData } from "../types.ts";
 
 interface Props {
   data: PartyGraphData;

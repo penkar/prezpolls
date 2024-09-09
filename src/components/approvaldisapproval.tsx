@@ -1,9 +1,11 @@
 import React from "react";
-import { HichChart } from "./hc.tsx";
+import HichChart from "./highChartCustom.tsx";
 
-import type { ApprovalDisprovalData, GraphDataPoint } from "./types.ts";
-
-import type { ChartType } from "../gallup/types.ts";
+import type {
+  ApprovalDisprovalData,
+  ChartType,
+  GraphDataPoint,
+} from "../types.ts";
 
 interface Props {
   data: ApprovalDisprovalData;

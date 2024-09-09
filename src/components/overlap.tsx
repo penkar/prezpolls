@@ -1,12 +1,12 @@
 import React from "react";
-import { HichChart } from "./hc.tsx";
+import HichChart from "./highChartCustom.tsx";
 import { overlapGraph } from "../gallup/index.ts";
 
 import type {
   ApprovalDisprovalData,
   GraphDataPoint,
   SeriesData,
-} from "./types.ts";
+} from "../types.ts";
 
 interface Props {
   bidenApp: ApprovalDisprovalData;
@@ -36,6 +36,8 @@ export function Overlap({
       { data: bidenApp, prez: "Biden", offset: 7 },
     ];
 
+    const series: SeriesData = [];
+
     coveredPresidents.forEach(({ data, offset, prez }, j) => {
       const app: GraphDataPoint = [];
       const dis: GraphDataPoint = [];
@@ -48,30 +50,30 @@ export function Overlap({
         neu.push([date.start.getTime() - YEAR * offset * 4, date.neu]);
       }
 
-      setSeriesData([
-        {
-          name: `${prez} Approval`,
-          type: "line",
-          data: app,
-        },
-        {
-          name: `${prez} Dissapproval`,
-          type: "line",
-          data: dis,
-        },
-        {
-          name: `${prez} Neutral`,
-          type: "line",
-          data: neu,
-        },
-      ]);
+      series.push({
+        name: `${prez} Approval`,
+        type: "line",
+        data: app,
+      });
+      series.push({
+        name: `${prez} Dissapproval`,
+        type: "line",
+        data: dis,
+      });
+      series.push({
+        name: `${prez} Neutral`,
+        type: "line",
+        data: neu,
+      });
+
+      setSeriesData(series);
     });
   }, []);
 
   return (
     <HichChart
       series={seriesData}
-      info={{ chart: overlapGraph }}
+      info={{ chart: overlapGraph, party: "", president: "" }}
       key="overlap"
     />
   );

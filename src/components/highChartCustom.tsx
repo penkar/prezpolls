@@ -2,14 +2,18 @@ import React from "react";
 import Highcharts from "highcharts";
 import styles from "./hc.module.scss";
 
-import type { SeriesData } from "./types.ts";
+import type { ChartType, SeriesData } from "../types.ts";
 
 interface Props {
   series: SeriesData;
-  info: any;
+  info: {
+    chart: ChartType;
+    party: string;
+    president: string;
+  };
 }
 
-export function HichChart({ series = [], info = { chart: {} } }: Props) {
+function HichChartCustom({ series = [], info }: Props) {
   const chartRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -31,3 +35,5 @@ export function HichChart({ series = [], info = { chart: {} } }: Props) {
     </div>
   );
 }
+
+export default HichChartCustom;
