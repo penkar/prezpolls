@@ -61,22 +61,26 @@ export const App = () => {
   const prevEvent = () => setIndex((index) => (index + 10) % 11);
 
   const prez = cycleData[index];
-  const data = gallup[prez.president],
-    info = gallup[prez.info];
+
+  const data = gallup[prez.president];
+  const info = gallup[prez.info];
+  console.log(66, { index, gallup, info });
 
   return (
     <div className={styles.app}>
-      <div className={styles.header}>
-        <div onClick={prevEvent} className={styles.button}>
+      <header className={styles.header}>
+        <button onClick={prevEvent} className={styles.button}>
           Previous
-        </div>
+        </button>
         <div className={styles.title}></div>
-        <div onClick={nextEvent} className={styles.button}>
+        <button onClick={nextEvent} className={styles.button}>
           Next
-        </div>
-      </div>
-      {index < 5 && <ApprovalDisapproval data={data} info={info} />}
-      {index > 4 && index < 10 && <PartyGraph data={data} info={info} />}
+        </button>
+      </header>
+      {index < 5 && <ApprovalDisapproval key={index} data={data} info={info} />}
+      {index > 4 && index < 10 && (
+        <PartyGraph key={index} data={data} info={info} />
+      )}
       {index === 10 && <Overlap {...gallup} />}
     </div>
   );

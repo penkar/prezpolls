@@ -3,39 +3,60 @@ import { HichChart } from "./hc.tsx";
 
 import type { ApprovalDisprovalData, GraphDataPoint } from "./types.ts";
 
+import type { ChartType } from "../gallup/types.ts";
+
 interface Props {
   data: ApprovalDisprovalData;
-  info: any;
+  info: {
+    party: string;
+    president: string;
+    chart: ChartType;
+  };
 }
 
 export function ApprovalDisapproval({ data, info }: Props) {
-  const approval: GraphDataPoint = [];
-  const disapproval: GraphDataPoint = [];
-  const neutral: GraphDataPoint = [];
+  const [appData, setAppData] = React.useState<GraphDataPoint>([]);
+  const [disData, setDisData] = React.useState<GraphDataPoint>([]);
+  const [neuData, setNeuData] = React.useState<GraphDataPoint>([]);
+  const [loaded, setLoaded] = React.useState(false);
 
-  for (let i = 0; i < data.length; i++) {
-    const { start, app, dis, neu } = data[i];
-    approval.push([start.getTime(), app]);
-    disapproval.push([start.getTime(), dis]);
-    neutral.push([start.getTime(), neu]);
-  }
+  React.useEffect(() => {
+    const app: GraphDataPoint = [];
+    const dis: GraphDataPoint = [];
+    const neu: GraphDataPoint = [];
+
+    for (let i = 0; i < data.length; i++) {
+      const { start, app: approval, dis: disapproval, neu: neutral } = data[i];
+      app.push([start.getTime(), approval]);
+      dis.push([start.getTime(), disapproval]);
+      neu.push([start.getTime(), neutral]);
+    }
+
+    setAppData(app);
+    setDisData(dis);
+    setNeuData(neu);
+    setLoaded(true);
+  }, [data.length]);
+
   const series = [
     {
-      data: approval,
+      data: appData,
       name: `Approval`,
       type: "area",
     },
     {
-      data: disapproval,
+      data: disData,
       name: `Disapproval`,
       type: "area",
     },
     {
-      data: neutral,
+      data: neuData,
       name: `Neutral`,
       type: "area",
     },
   ];
 
-  return <HichChart series={series} info={info} key={info.president} />;
+  return (
+    loaded && <HichChart series={series} info={info} key={info.president} />
+  );
 }

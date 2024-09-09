@@ -1,4 +1,6 @@
-const defaults = {
+import { ChartType } from "./types";
+
+const defaults: ChartType = {
   subtitle: {
     text: `Source: Gallup.com`,
   },
@@ -18,11 +20,12 @@ const defaults = {
   yAxis: {
     title: {
       text: `Approval Percentage`,
-    }
+    },
   },
   tooltip: {
-    pointFormat: "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}%</b><br/>",
-    split: true
+    pointFormat:
+      "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}%</b><br/>",
+    split: true,
   },
   plotOptions: {
     area: {
@@ -31,37 +34,37 @@ const defaults = {
       lineWidth: 1,
       marker: {
         lineWidth: 1,
-        lineColor: "#ffffff"
-      }
-    }
+        lineColor: "#ffffff",
+      },
+    },
   },
-}
+};
 
 export const overlapGraph = Object.assign({}, defaults, {
   chart: {
-    height:window.innerHeight - 64,
-    type:"line",
+    height: window.innerHeight - 64,
+    type: "line",
   },
   title: {
     text: `Presidential approval and disapproval for the prior four presidents.`,
   },
   legend: {
-    layout:`horizontal`,
-    align:`center`,
-    verticalAlign:`bottom`,
-  }
+    layout: `horizontal`,
+    align: `center`,
+    verticalAlign: `bottom`,
+  },
 });
 
 export const approvalChartDefault = Object.assign({}, defaults, {
   chart: {
-    height:window.innerHeight - 64,
-    type:`area`,
+    height: window.innerHeight - 64,
+    type: `area`,
   },
 });
 
 export const approvalByParty = Object.assign({}, defaults, {
   chart: {
-    height:window.innerHeight - 64,
-    type:`line`,
-  }
+    height: window.innerHeight - 64,
+    type: `line`,
+  },
 });
