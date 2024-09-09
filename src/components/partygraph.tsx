@@ -4,7 +4,6 @@ import { HichChart } from "./hc.tsx";
 import type { PartyGraphData, GraphDataPoint } from "./types.ts";
 
 import type { ChartType } from "../gallup/types.ts";
-import { set } from "lodash";
 
 interface Props {
   data: PartyGraphData;
@@ -37,7 +36,7 @@ export function PartyGraph({ data, info }: Props) {
     setIndData(independent);
     setDemData(democrat);
     setLoaded(true);
-  }, [data.length]);
+  }, [data]);
 
   const series = [
     {

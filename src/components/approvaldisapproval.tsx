@@ -36,7 +36,7 @@ export function ApprovalDisapproval({ data, info }: Props) {
     setDisData(dis);
     setNeuData(neu);
     setLoaded(true);
-  }, [data.length]);
+  }, [data]);
 
   const series = [
     {

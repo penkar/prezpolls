@@ -23,7 +23,7 @@ export function HichChart({ series = [], info = { chart: {} } }: Props) {
 
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
-  }, []);
+  }, [series, info]);
 
   return (
     <div className={styles.main}>
