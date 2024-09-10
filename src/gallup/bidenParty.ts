@@ -1,6 +1,15 @@
 import { approvalChartDefault } from "./defaults.ts";
 
 export const bidenParty = [
+  { start: new Date(`2024 Aug 1`), rep: 3, ind: 37, dem: 89 },
+  { start: new Date(`2024 Jul 1`), rep: 4, ind: 31, dem: 81 },
+  { start: new Date(`2024 Jun 3`), rep: 5, ind: 33, dem: 83 },
+  { start: new Date(`2024 May 1`), rep: 2, ind: 34, dem: 82 },
+  { start: new Date(`2024 Apr 1`), rep: 2, ind: 33, dem: 83 },
+  { start: new Date(`2024 Mar 1`), rep: 7, ind: 34, dem: 83 },
+  { start: new Date(`2024 Feb 1`), rep: 3, ind: 32, dem: 82 },
+  { start: new Date(`2024 Jan 2`), rep: 6, ind: 35, dem: 83 },
+  { start: new Date(`2023 Dec 1`), rep: 5, ind: 34, dem: 78 },
   { start: new Date(`2023 Nov 1`), rep: 5, ind: 27, dem: 83 },
   { start: new Date(`2023 Oct 2`), rep: 5, ind: 35, dem: 75 },
   { start: new Date(`2023 Sep 1`), rep: 5, ind: 39, dem: 86 },

@@ -1,6 +1,16 @@
+// https://news.gallup.com/poll/329384/presidential-approval-ratings-joe-biden.aspx
 import { approvalChartDefault } from "./defaults.ts";
 
 export const bidenApp = [
+  { start: new Date(`2024 Aug 1`), app: 43, dis: 53, neu: 4 },
+  { start: new Date(`2024 Jul 1`), app: 36, dis: 58, neu: 5 },
+  { start: new Date(`2024 Jun 3`), app: 38, dis: 58, neu: 4 },
+  { start: new Date(`2024 May 1`), app: 39, dis: 56, neu: 5 },
+  { start: new Date(`2024 Apr 1`), app: 38, dis: 58, neu: 4 },
+  { start: new Date(`2024 Mar 1`), app: 40, dis: 55, neu: 5 },
+  { start: new Date(`2024 Feb 1`), app: 38, dis: 59, neu: 3 },
+  { start: new Date(`2024 Jan 2`), app: 41, dis: 54, neu: 5 },
+  { start: new Date(`2023 Dec 1`), app: 39, dis: 59, neu: 2 },
   { start: new Date(`2023 Nov 1`), app: 37, dis: 59, neu: 4 },
   { start: new Date(`2023 Oct 2`), app: 37, dis: 59, neu: 4 },
   { start: new Date(`2023 Sep 1`), app: 41, dis: 58, neu: 1 },
