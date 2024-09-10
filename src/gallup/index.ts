@@ -8,4 +8,3 @@ export * from "./clintonApp.ts";
 export * from "./clintonParty.ts";
 export * from "./trumpApp.ts";
 export * from "./trumpParty.ts";
-export * from "./defaults.ts";

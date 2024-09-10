@@ -1,4 +1,4 @@
-import { approvalChartDefault } from "./defaults.ts";
+import { approvalChartDefault } from "../chartformat/index.ts";
 
 export const bushApp = [
   { start: new Date(`2009 Jan 9`), app: 34, dis: 61, neu: 5 },

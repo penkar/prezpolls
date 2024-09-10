@@ -71,7 +71,7 @@ export const App = () => {
         <button onClick={prevEvent} className={styles.button}>
           Previous
         </button>
-        <div className={styles.title}></div>
+        <div>Historical Presidential Gallup Polls</div>
         <button onClick={nextEvent} className={styles.button}>
           Next
         </button>

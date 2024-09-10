@@ -1,6 +1,6 @@
 import React from "react";
 import HichChart from "./highChartCustom.tsx";
-import { overlapGraph } from "../gallup/index.ts";
+import { overlapGraph } from "../chartformat/index.ts";
 
 import type {
   ApprovalDisprovalData,

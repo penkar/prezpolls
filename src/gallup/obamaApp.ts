@@ -1,4 +1,4 @@
-import { approvalChartDefault } from "./defaults.ts";
+import { approvalChartDefault } from "../chartformat/index.ts";
 
 export const obamaApp = [
   { start: new Date(`2017 Jan 16`), app: 59, dis: 37, neu: 4 },

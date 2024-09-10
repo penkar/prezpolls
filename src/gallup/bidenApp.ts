@@ -1,5 +1,5 @@
 // https://news.gallup.com/poll/329384/presidential-approval-ratings-joe-biden.aspx
-import { approvalChartDefault } from "./defaults.ts";
+import { approvalChartDefault } from "../chartformat/index.ts";
 
 export const bidenApp = [
   { start: new Date(`2024 Aug 1`), app: 43, dis: 53, neu: 4 },

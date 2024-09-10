@@ -24,7 +24,7 @@ const defaults: ChartType = {
   },
   tooltip: {
     pointFormat:
-      "<span style='color:{series.color}'>{series.name}</span>: <b>{point.y}%</b><br/>",
+      "<span style='color:{series.color}'>{series.name}</span><br /><span style='font-weight:900'>{point.y}%</span>",
     split: true,
   },
   plotOptions: {

@@ -1,4 +1,4 @@
-import { approvalChartDefault } from "./defaults.ts";
+import { approvalChartDefault } from "../chartformat/index.ts";
 
 export const clintonParty = [
   { start: new Date(`2001 Jan 10`), rep: 39, ind: 66, dem: 93 },

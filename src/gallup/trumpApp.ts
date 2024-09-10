@@ -1,4 +1,4 @@
-import { approvalChartDefault } from "./defaults.ts";
+import { approvalChartDefault } from "../chartformat/index.ts";
 //http://news.gallup.com/poll/203198/presidential-approval-ratings-donald-trump.aspx
 
 export const trumpApp = [
