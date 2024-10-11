@@ -423,7 +423,7 @@ export const obamaApp = [
 export const obamaAppData = {
   president: `Barak H. Obama`,
   party: `Democrat`,
-  chart: Object.assign({}, approvalChartDefault, {
+  chart: Object.assign({}, approvalChartDefault(), {
     title: { text: `Presidential Approval Poll for Barak Obama` },
   }),
 };

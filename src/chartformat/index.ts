@@ -40,7 +40,8 @@ const defaults: ChartType = {
   },
 };
 
-export const overlapGraph = Object.assign({}, defaults, {
+export const overlapGraph = (): ChartType => ({
+  ...defaults,
   chart: {
     height: window.innerHeight - 64,
     type: "line",
@@ -55,16 +56,10 @@ export const overlapGraph = Object.assign({}, defaults, {
   },
 });
 
-export const approvalChartDefault = Object.assign({}, defaults, {
+export const approvalChartDefault = (): ChartType => ({
+  ...defaults,
   chart: {
     height: window.innerHeight - 64,
     type: `area`,
-  },
-});
-
-export const approvalByParty = Object.assign({}, defaults, {
-  chart: {
-    height: window.innerHeight - 64,
-    type: `line`,
   },
 });

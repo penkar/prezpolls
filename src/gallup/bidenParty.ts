@@ -49,7 +49,7 @@ export const bidenParty = [
 export const bidenPartyData = {
   president: `Joe Biden`,
   party: `democrat`,
-  chart: Object.assign({}, approvalChartDefault, {
+  chart: Object.assign({}, approvalChartDefault(), {
     title: { text: `Presidential Approval Poll by party for Joe Biden` },
   }),
 };

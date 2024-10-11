@@ -288,7 +288,7 @@ export const bushApp = [
 export const bushAppData = {
   president: `Gerorge W. Bush`,
   party: `Republican`,
-  chart: Object.assign({}, approvalChartDefault, {
+  chart: Object.assign({}, approvalChartDefault(), {
     title: { text: `Presidential Approval Poll for George W. Bush` },
   }),
 };

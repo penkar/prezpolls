@@ -223,7 +223,7 @@ export const clintonApp = [
 export const clintonAppData = {
   president: `Bill Clinton`,
   party: `Democrat`,
-  chart: Object.assign({}, approvalChartDefault, {
+  chart: Object.assign({}, approvalChartDefault(), {
     title: { text: `Presidential Approval Poll for Bill Clinton` },
   }),
 };

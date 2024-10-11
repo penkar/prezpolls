@@ -1,5 +1,6 @@
 import React from "react";
-import HichChart from "./highChartCustom.tsx";
+
+import { CustomHighChart } from "./CustomHighChart.tsx";
 
 import type { ChartType, GraphDataPoint, PartyGraphData } from "../types.ts";
 
@@ -55,6 +56,8 @@ export function PartyGraph({ data, info }: Props) {
   ];
 
   return (
-    loaded && <HichChart series={series} info={info} key={info.president} />
+    loaded && (
+      <CustomHighChart series={series} info={info} key={info.president} />
+    )
   );
 }

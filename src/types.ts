@@ -19,18 +19,18 @@ export type ApprovalDisprovalData = ApprovalDisprovalDataPoint[];
 export type GraphDataPoint = number[][];
 
 type SeriesDataPoint = {
+  data: GraphDataPoint;
   name: string;
   type: string;
-  data: GraphDataPoint;
 };
 
 export type SeriesData = SeriesDataPoint[];
 
 type PlotOptions = {
   area: {
-    stacking: string;
     lineColor: string;
     lineWidth: number;
+    stacking: string;
     marker: {
       lineWidth: number;
       lineColor: string;
@@ -42,13 +42,19 @@ type Legend = {
   layout: string;
   align: string;
   verticalAlign: string;
-  x: number;
-  y: number;
+  x?: number;
+  y?: number;
 };
 
 export type ChartType = {
+  legend: Legend;
+  plotOptions: PlotOptions;
   subtitle: {
     text: string;
+  };
+  tooltip: {
+    pointFormat: string;
+    split: boolean;
   };
   xAxis: {
     title: {
@@ -56,17 +62,11 @@ export type ChartType = {
     };
     type: string;
   };
-  legend: Legend;
   yAxis: {
     title: {
       text: string;
     };
   };
-  tooltip: {
-    pointFormat: string;
-    split: boolean;
-  };
-  plotOptions: PlotOptions;
   chart?: {
     height: number;
     type: string;

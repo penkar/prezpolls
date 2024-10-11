@@ -1,5 +1,5 @@
 import React from "react";
-import HichChart from "./highChartCustom.tsx";
+import { CustomHighChart } from "./CustomHighChart.tsx";
 import { overlapGraph } from "../chartformat/index.ts";
 
 import type {
@@ -27,7 +27,7 @@ export function Overlap({
 }: Props) {
   const [seriesData, setSeriesData] = React.useState<SeriesData>([]);
 
-  React.useState(() => {
+  React.useEffect(() => {
     const coveredPresidents = [
       { data: clintonApp, prez: "Clinton", offset: 0 },
       { data: bushApp, prez: "Bush", offset: 2 },
@@ -68,12 +68,13 @@ export function Overlap({
 
       setSeriesData(series);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <HichChart
+    <CustomHighChart
       series={seriesData}
-      info={{ chart: overlapGraph, party: "", president: "" }}
+      info={{ chart: overlapGraph(), party: "", president: "" }}
       key="overlap"
     />
   );

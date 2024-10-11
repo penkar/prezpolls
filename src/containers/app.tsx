@@ -1,57 +1,91 @@
 import React from "react";
-import * as gallup from "../gallup/index.ts";
+
 import {
   ApprovalDisapproval,
   PartyGraph,
   Overlap,
 } from "../components/index.ts";
 
+import {
+  bidenApp,
+  bidenAppData,
+  bidenParty,
+  bidenPartyData,
+  bushApp,
+  bushAppData,
+  bushParty,
+  bushPartyData,
+  clintonApp,
+  clintonAppData,
+  clintonParty,
+  clintonPartyData,
+  obamaApp,
+  obamaAppData,
+  obamaParty,
+  obamaPartyData,
+  trumpApp,
+  trumpAppData,
+  trumpParty,
+  trumpPartyData,
+} from "../gallup/index.ts";
+
+import type {
+  ChartType,
+  PartyGraphData,
+  ApprovalDisprovalData,
+} from "../types.ts";
+
 import styles from "./app.module.scss";
 
-const cycleData = [
+type CycleData = {
+  president: ApprovalDisprovalData | PartyGraphData;
+  info: {
+    party: string;
+    president: string;
+    chart: ChartType;
+  };
+}[];
+
+const cycleData: CycleData = [
   {
-    president: "clintonApp",
-    info: "clintonAppData",
+    president: clintonApp,
+    info: clintonAppData,
   },
   {
-    president: "bushApp",
-    info: "bushAppData",
+    president: bushApp,
+    info: bushAppData,
   },
   {
-    president: "obamaApp",
-    info: "obamaAppData",
+    president: obamaApp,
+    info: obamaAppData,
   },
   {
-    president: "trumpApp",
-    info: "trumpAppData",
+    president: trumpApp,
+    info: trumpAppData,
   },
   {
-    president: "bidenApp",
-    info: "bidenAppData",
+    president: bidenApp,
+    info: bidenAppData,
   },
   {
-    president: "clintonParty",
-    info: "clintonPartyData",
+    president: clintonParty,
+    info: clintonPartyData,
   },
   {
-    president: "bushParty",
-    info: "bushPartyData",
+    president: bushParty,
+    info: bushPartyData,
   },
   {
-    president: "obamaParty",
-    info: "obamaPartyData",
+    president: obamaParty,
+    info: obamaPartyData,
   },
   {
-    president: "trumpParty",
-    info: "trumpPartyData",
+    president: trumpParty,
+    info: trumpPartyData,
   },
   {
-    president: "bidenParty",
-    info: "bidenPartyData",
-  },
-  {
-    president: "overlap",
-    info: "overlap",
+    president: bidenParty,
+    info: bidenPartyData,
   },
 ];
 
@@ -60,10 +94,7 @@ export const App = () => {
   const nextEvent = () => setIndex((index) => (index + 1) % 11);
   const prevEvent = () => setIndex((index) => (index + 10) % 11);
 
-  const prez = cycleData[index];
-
-  const data = gallup[prez.president];
-  const info = gallup[prez.info];
+  const { president, info } = cycleData[index] || {};
 
   return (
     <div className={styles.app}>
@@ -76,11 +107,29 @@ export const App = () => {
           Next
         </button>
       </header>
-      {index < 5 && <ApprovalDisapproval key={index} data={data} info={info} />}
-      {index > 4 && index < 10 && (
-        <PartyGraph key={index} data={data} info={info} />
+      {index < 5 && (
+        <ApprovalDisapproval
+          key={index}
+          data={president as ApprovalDisprovalData}
+          info={info}
+        />
       )}
-      {index === 10 && <Overlap {...gallup} />}
+      {index > 4 && index < 10 && (
+        <PartyGraph
+          key={index}
+          data={president as PartyGraphData}
+          info={info}
+        />
+      )}
+      {index === 10 && (
+        <Overlap
+          bidenApp={bidenApp}
+          bushApp={bushApp}
+          clintonApp={clintonApp}
+          obamaApp={obamaApp}
+          trumpApp={trumpApp}
+        />
+      )}
     </div>
   );
 };

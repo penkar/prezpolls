@@ -288,7 +288,7 @@ export const bushParty = [
 export const bushPartyData = {
   president: `Gerorge W. Bush`,
   party: `Republican`,
-  chart: Object.assign({}, approvalChartDefault, {
+  chart: Object.assign({}, approvalChartDefault(), {
     title: { text: `Presidential Approval Poll by party for George W. Bush` },
   }),
 };

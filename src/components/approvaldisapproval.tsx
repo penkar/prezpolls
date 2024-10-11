@@ -1,5 +1,5 @@
 import React from "react";
-import HichChart from "./highChartCustom.tsx";
+import { CustomHighChart } from "./CustomHighChart.tsx";
 
 import type {
   ApprovalDisprovalData,
@@ -20,7 +20,7 @@ export function ApprovalDisapproval({ data, info }: Props) {
   const [appData, setAppData] = React.useState<GraphDataPoint>([]);
   const [disData, setDisData] = React.useState<GraphDataPoint>([]);
   const [neuData, setNeuData] = React.useState<GraphDataPoint>([]);
-  const [loaded, setLoaded] = React.useState(false);
+  const [loaded, setLoaded] = React.useState<Boolean>(false);
 
   React.useEffect(() => {
     const app: GraphDataPoint = [];
@@ -59,6 +59,8 @@ export function ApprovalDisapproval({ data, info }: Props) {
   ];
 
   return (
-    loaded && <HichChart series={series} info={info} key={info.president} />
+    loaded && (
+      <CustomHighChart series={series} info={info} key={info.president} />
+    )
   );
 }

@@ -148,7 +148,7 @@ export const trumpApp = [
 export const trumpAppData = {
   president: `Donald J. Trump`,
   party: `republican`,
-  chart: Object.assign({}, approvalChartDefault, {
+  chart: Object.assign({}, approvalChartDefault(), {
     title: { text: `Presidential Approval Poll for Donald Trump` },
   }),
 };

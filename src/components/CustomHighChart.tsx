@@ -1,27 +1,25 @@
 import React from "react";
 import Highcharts from "highcharts";
-import styles from "./hc.module.scss";
 
 import type { ChartType, SeriesData } from "../types.ts";
 
+import styles from "./CustomHighChart.module.scss";
+
 interface Props {
-  series: SeriesData;
   info: {
     chart: ChartType;
     party: string;
     president: string;
   };
+  series: SeriesData;
 }
 
-function HichChartCustom({ series = [], info }: Props) {
+export const CustomHighChart = ({ series = [], info }: Props) => {
   const chartRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     if (!chartRef.current) return;
-    const chart = Highcharts.chart(
-      chartRef.current,
-      Object.assign({}, info.chart, { series })
-    );
+    const chart = Highcharts.chart(chartRef.current, { ...info.chart, series });
     const resize = () =>
       chart.setSize(window.innerWidth, window.innerHeight - 64);
 
@@ -34,6 +32,4 @@ function HichChartCustom({ series = [], info }: Props) {
       <div ref={chartRef}></div>;
     </div>
   );
-}
-
-export default HichChartCustom;
+};
